@@ -11,13 +11,17 @@ int reverseNumber(int num) {
 }
 
 int main() {
-    int inNum;
-    while (scanf("%d", &inNum) != EOF) {
+    int inNum, retVal;
+    while ((retVal = scanf("%d", &inNum)) > 0) {
         if (inNum < 0) {
-            fprintf(stderr, "Input must be a positive integer");
-            return 1;
+            fprintf(stderr, "Error: input value %d is not positive\n", inNum);
+            continue;
         }
         printf("%d\n", inNum + reverseNumber(inNum));
+    }
+    if (retVal == 0) {
+        fprintf(stderr, "Error: Non-integer value in input");
+        return 1;
     }
     return 0;
 }
