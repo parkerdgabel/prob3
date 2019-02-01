@@ -20,7 +20,7 @@ int main() {
         printf("%d\n", inNum + reverseNumber(inNum));
     }
     if (retVal == 0) {
-        fprintf(stderr, "Error: Non-integer value in input");
+        fprintf(stderr, "Error: Non-integer value in input\n");
         return 1;
     }
     return 0;
